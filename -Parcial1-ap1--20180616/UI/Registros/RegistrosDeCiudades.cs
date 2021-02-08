@@ -66,6 +66,14 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             CiudadNombreTextBox.Clear();
         }
 
+        private bool ExisteEnBaseDatos()
+        {
+            Ciudades ciudades = new Ciudades();
+
+            ciudades = CiudadesBLL.Buscar((int)CiudadIdNumericUpDown.Value);
+
+            return (ciudades != null);
+        }
         
     }
 }
