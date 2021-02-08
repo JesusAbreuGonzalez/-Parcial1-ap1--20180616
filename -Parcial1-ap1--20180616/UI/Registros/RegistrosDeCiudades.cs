@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _Parcial1_ap1__20180616.BLL;
+using _Parcial1_ap1__20180616.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +17,16 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             InitializeComponent();
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private Ciudades LlenarClase()
         {
+            Ciudades ciudades = new Ciudades();
 
+            ciudades.CiudadId = (int)CiudadIdNumericUpDown.Value;
+            ciudades.CiudadNombre = CiudadNombreTextBox.Text;
+
+            return ciudades;
         }
+
+       
     }
 }
