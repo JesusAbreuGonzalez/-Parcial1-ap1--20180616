@@ -116,5 +116,19 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             }
         }
 
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            int id = (int)CiudadIdNumericUpDown.Value;
+            CiudadesErrorProvider.Clear();
+            if (CiudadesBLL.Eliminar(id))
+            {
+                MessageBox.Show("La ciudad ha sido eliminada");
+                Limpiar();
+            }
+            else
+                CiudadesErrorProvider.SetError(CiudadIdNumericUpDown, "Este Id no existe en la base de datos");
+        }
+
         
+    }
 }
