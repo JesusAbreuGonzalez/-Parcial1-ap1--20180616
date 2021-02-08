@@ -29,6 +29,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrosDeCiudades));
             this.CiudadIdLabel = new System.Windows.Forms.Label();
             this.CiudadNombreLabel = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.CiudadesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CiudadIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CiudadesErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CiudadIdLabel
@@ -86,6 +89,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // NuevoButton
             // 
@@ -123,6 +127,10 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             // 
+            // CiudadesErrorProvider
+            // 
+            this.CiudadesErrorProvider.ContainerControl = this;
+            // 
             // RegistrosDeCiudades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -140,6 +148,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             this.Name = "RegistrosDeCiudades";
             this.Text = "RegistrosDeCiudades";
             ((System.ComponentModel.ISupportInitialize)(this.CiudadIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CiudadesErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +164,6 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.ErrorProvider CiudadesErrorProvider;
     }
 }

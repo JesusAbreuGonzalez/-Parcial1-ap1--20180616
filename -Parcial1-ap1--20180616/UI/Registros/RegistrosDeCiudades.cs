@@ -14,5 +14,10 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
