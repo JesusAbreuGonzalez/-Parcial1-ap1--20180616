@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _Parcial1_ap1__20180616
+namespace _Parcial1_ap1__20180616.UI.Registros
 {
-    public partial class Form1 : Form
+    public partial class RegistrosDeCiudades : Form
     {
-        public Form1()
+        public RegistrosDeCiudades()
         {
             InitializeComponent();
         }
-
     }
 }

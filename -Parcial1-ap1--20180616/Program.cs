@@ -17,7 +17,7 @@ namespace _Parcial1_ap1__20180616
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new UI.Registros.RegistrosDeCiudades());
         }
     }
 }
