@@ -60,5 +60,12 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             return paso;
         }
 
+        private void Limpiar()
+        {
+            CiudadIdNumericUpDown.Value = 0;
+            CiudadNombreTextBox.Clear();
+        }
+
+        
     }
 }
