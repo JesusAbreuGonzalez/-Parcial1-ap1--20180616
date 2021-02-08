@@ -129,6 +129,9 @@ namespace _Parcial1_ap1__20180616.UI.Registros
                 CiudadesErrorProvider.SetError(CiudadIdNumericUpDown, "Este Id no existe en la base de datos");
         }
 
-        
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }
