@@ -74,6 +74,23 @@ namespace _Parcial1_ap1__20180616.UI.Registros
 
             return (ciudades != null);
         }
-        
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Ciudades ciudades = new Ciudades();
+            int id = (int)CiudadIdNumericUpDown.Value;
+
+            ciudades = CiudadesBLL.Buscar(id);
+
+            if (ciudades != null)
+            {
+                LlenarCampos(id);
+                MessageBox.Show("Ciudad Encontrada");
+            }
+            else
+                MessageBox.Show("La ciudad no ha sido encontrada");
+        }
+
+       
     }
 }
