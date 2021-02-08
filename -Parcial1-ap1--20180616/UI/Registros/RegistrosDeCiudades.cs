@@ -41,6 +41,24 @@ namespace _Parcial1_ap1__20180616.UI.Registros
                 return false;
         }
 
-        
+        private bool Validar()
+        {
+            bool paso = true;
+
+            if (CiudadIdNumericUpDown.Value == 0)
+            {
+                CiudadesErrorProvider.SetError(CiudadIdNumericUpDown, "Campo obligatorio");
+                paso = false;
+            }
+
+            if (CiudadNombreTextBox.Text == "")
+            {
+                CiudadesErrorProvider.SetError(CiudadNombreTextBox, "Campo obligatorio");
+                paso = false;
+            }
+
+            return paso;
+        }
+
     }
 }
