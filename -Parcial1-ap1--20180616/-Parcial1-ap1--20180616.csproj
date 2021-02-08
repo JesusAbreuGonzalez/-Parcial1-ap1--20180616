@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+	  <StartWorkingDirectory>$(MSBuilProjectDirectory)</StartWorkingDirectory>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>_Parcial1_ap1__20180616</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
@@ -13,6 +14,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GestionCiudades.Db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
