@@ -27,6 +27,20 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             return ciudades;
         }
 
-       
+        private bool LlenarCampos(int id)
+        {
+            Ciudades ciudades = new Ciudades();
+
+            if (ciudades != null)
+            {
+                CiudadIdNumericUpDown.Value = ciudades.CiudadId;
+                CiudadNombreTextBox.Text = ciudades.CiudadNombre;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        
     }
 }
