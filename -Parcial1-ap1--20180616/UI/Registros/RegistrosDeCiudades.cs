@@ -30,7 +30,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         private bool LlenarCampos(int id)
         {
             Ciudades ciudades = new Ciudades();
-
+            ciudades = CiudadesBLL.Buscar(id);
             if (ciudades != null)
             {
                 CiudadIdNumericUpDown.Value = ciudades.CiudadId;
