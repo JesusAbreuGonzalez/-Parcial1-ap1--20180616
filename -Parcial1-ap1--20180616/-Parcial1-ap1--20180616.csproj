@@ -9,6 +9,10 @@
 
   <ItemGroup>
     <PackageReference Include="microsoft.entityFrameWorkCore.SQLITE" Version="5.0.2" />
+    <PackageReference Include="microsoft.entityframeworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
