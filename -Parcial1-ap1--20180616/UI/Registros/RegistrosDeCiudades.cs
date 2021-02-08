@@ -91,6 +91,30 @@ namespace _Parcial1_ap1__20180616.UI.Registros
                 MessageBox.Show("La ciudad no ha sido encontrada");
         }
 
-       
-    }
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            Ciudades ciudades = new Ciudades();
+            bool paso = false;
+
+            if (!Validar())
+                return;
+
+            ciudades = LlenarClase();
+            if (CiudadIdNumericUpDown.Value != 0)
+            {
+                paso = CiudadesBLL.Guardar(ciudades);
+                MessageBox.Show("La ciudad ha sido guardada con exito");
+            }
+            else
+            {
+                if (!ExisteEnBaseDatos())
+                {
+                    MessageBox.Show("Esta ciudad no existe en la base de datos");
+                    return;
+                }
+                paso = CiudadesBLL.Modificar(ciudades);
+            }
+        }
+
+        
 }
