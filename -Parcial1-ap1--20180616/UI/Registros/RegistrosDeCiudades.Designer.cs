@@ -82,9 +82,9 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(289, 37);
+            this.BuscarButton.Location = new System.Drawing.Point(289, 39);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(80, 29);
+            this.BuscarButton.Size = new System.Drawing.Size(80, 27);
             this.BuscarButton.TabIndex = 4;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
