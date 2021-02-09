@@ -79,9 +79,9 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         {
             Ciudades ciudades = new Ciudades();
             int id = (int)CiudadIdNumericUpDown.Value;
-
+            CiudadNombreTextBox.Clear();
             ciudades = CiudadesBLL.Buscar(id);
-
+            
             if (ciudades != null)
             {
                 LlenarCampos(id);
@@ -95,6 +95,8 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         {
             Ciudades ciudades = new Ciudades();
             bool paso = false;
+            int id = (int)CiudadIdNumericUpDown.Value;
+            string nombre = CiudadNombreTextBox.Text;
 
             if (!Validar())
                 return;
@@ -102,6 +104,11 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             ciudades = LlenarClase();
             if (CiudadIdNumericUpDown.Value != 0)
             {
+                if (CiudadesBLL.ExisteNombre(id, nombre))
+                {
+                    MessageBox.Show("La ciudad ya existe en la base de datos, no puede agregarla a la base de datos");
+                    return;
+                }
                 paso = CiudadesBLL.Guardar(ciudades);
                 MessageBox.Show("La ciudad ha sido guardada con exito");
             }

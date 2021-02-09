@@ -32,6 +32,37 @@ namespace _Parcial1_ap1__20180616.BLL
             return encontrado;
         }
 
+        public static bool ExisteNombre(int id, string alias)
+        {
+            bool encontrado = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                encontrado = contexto.Ciudades.Any(e => e.CiudadNombre == alias);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            if(encontrado)
+            {
+                Ciudades ciudades = Buscar(id);
+                if (ciudades == null)
+                    return true;
+                if (ciudades.CiudadNombre == alias)
+                    encontrado = false;
+            }
+
+            return encontrado;
+        }
+
         public static bool Insertar(Ciudades ciudades)
         {
             bool paso = false;
