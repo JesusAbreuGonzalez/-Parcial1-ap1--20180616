@@ -66,23 +66,23 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             // CiudadIdNumericUpDown
             // 
-            this.CiudadIdNumericUpDown.Location = new System.Drawing.Point(31, 65);
+            this.CiudadIdNumericUpDown.Location = new System.Drawing.Point(133, 39);
             this.CiudadIdNumericUpDown.Name = "CiudadIdNumericUpDown";
             this.CiudadIdNumericUpDown.Size = new System.Drawing.Size(150, 27);
             this.CiudadIdNumericUpDown.TabIndex = 2;
             // 
             // CiudadNombreTextBox
             // 
-            this.CiudadNombreTextBox.Location = new System.Drawing.Point(31, 161);
+            this.CiudadNombreTextBox.Location = new System.Drawing.Point(122, 134);
             this.CiudadNombreTextBox.Name = "CiudadNombreTextBox";
-            this.CiudadNombreTextBox.Size = new System.Drawing.Size(353, 27);
+            this.CiudadNombreTextBox.Size = new System.Drawing.Size(311, 27);
             this.CiudadNombreTextBox.TabIndex = 3;
             // 
             // BuscarButton
             // 
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(187, 63);
+            this.BuscarButton.Location = new System.Drawing.Point(289, 37);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(80, 29);
             this.BuscarButton.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             this.NuevoButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoButton.Image")));
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(33, 228);
+            this.NuevoButton.Location = new System.Drawing.Point(33, 226);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(92, 50);
             this.NuevoButton.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(187, 228);
+            this.GuardarButton.Location = new System.Drawing.Point(187, 226);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(92, 50);
             this.GuardarButton.TabIndex = 6;
@@ -121,7 +121,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(341, 228);
+            this.EliminarButton.Location = new System.Drawing.Point(341, 226);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(92, 50);
             this.EliminarButton.TabIndex = 7;
@@ -138,7 +138,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 310);
+            this.ClientSize = new System.Drawing.Size(464, 305);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
