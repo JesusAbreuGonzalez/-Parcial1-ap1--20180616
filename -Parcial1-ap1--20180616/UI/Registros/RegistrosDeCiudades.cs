@@ -27,29 +27,15 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             return ciudades;
         }
 
-        private bool LlenarCampos(int id)
+        private void LlenarCampos(Ciudades ciudades)
         {
-            Ciudades ciudades = new Ciudades();
-            ciudades = CiudadesBLL.Buscar(id);
-            if (ciudades != null)
-            {
-                CiudadIdNumericUpDown.Value = ciudades.CiudadId;
-                CiudadNombreTextBox.Text = ciudades.CiudadNombre;
-                return true;
-            }
-            else
-                return false;
+            CiudadIdNumericUpDown.Value = ciudades.CiudadId;
+            CiudadNombreTextBox.Text = ciudades.CiudadNombre;
         }
 
         private bool Validar()
         {
             bool paso = true;
-
-            if (CiudadIdNumericUpDown.Value == 0)
-            {
-                CiudadesErrorProvider.SetError(CiudadIdNumericUpDown, "Campo obligatorio");
-                paso = false;
-            }
 
             if (CiudadNombreTextBox.Text == "")
             {
@@ -79,48 +65,46 @@ namespace _Parcial1_ap1__20180616.UI.Registros
         {
             Ciudades ciudades = new Ciudades();
             int id = (int)CiudadIdNumericUpDown.Value;
-            CiudadNombreTextBox.Clear();
+
+            Limpiar();
             ciudades = CiudadesBLL.Buscar(id);
-            
+
             if (ciudades != null)
-            {
-                LlenarCampos(id);
-                MessageBox.Show("Ciudad Encontrada");
-            }
+                LlenarCampos(ciudades);
             else
-                MessageBox.Show("La ciudad no ha sido encontrada");
+                MessageBox.Show("Ciudad no encontrada ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Ciudades ciudades = new Ciudades();
             bool paso = false;
-            int id = (int)CiudadIdNumericUpDown.Value;
-            string nombre = CiudadNombreTextBox.Text;
+            Ciudades ciudad;
 
             if (!Validar())
                 return;
+            ciudad = LlenarClase();
 
-            ciudades = LlenarClase();
-            if (CiudadIdNumericUpDown.Value != 0)
-            {
-                if (CiudadesBLL.ExisteNombre(id, nombre))
-                {
-                    MessageBox.Show("La ciudad ya existe en la base de datos, no puede agregarla a la base de datos");
-                    return;
-                }
-                paso = CiudadesBLL.Guardar(ciudades);
-                MessageBox.Show("La ciudad ha sido guardada con exito");
-            }
+            if (CiudadIdNumericUpDown.Value == 0)
+                paso = CiudadesBLL.Guardar(ciudad, CiudadNombreTextBox.Text);
             else
             {
                 if (!ExisteEnBaseDatos())
                 {
-                    MessageBox.Show("Esta ciudad no existe en la base de datos");
+                    MessageBox.Show("No se puede modificar una ciudad que no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = CiudadesBLL.Modificar(ciudades);
+                paso = CiudadesBLL.Modificar(ciudad);
             }
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("La ciudad ha sido guardada!", "Logrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("No se pudo guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -129,7 +113,7 @@ namespace _Parcial1_ap1__20180616.UI.Registros
             CiudadesErrorProvider.Clear();
             if (CiudadesBLL.Eliminar(id))
             {
-                MessageBox.Show("La ciudad ha sido eliminada");
+                MessageBox.Show("La ciudad ha sido eliminada", "Logrado");
                 Limpiar();
             }
             else

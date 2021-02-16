@@ -10,14 +10,15 @@ namespace _Parcial1_ap1__20180616.BLL
 {
     public class CiudadesBLL
     {
-        public static bool Existe(int id)
+
+        public static bool ExisteNombre(string alias)
         {
             bool encontrado = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                encontrado = contexto.Ciudades.Any(e => e.CiudadId == id);
+                encontrado = contexto.Ciudades.Any(e => e.CiudadNombre.ToLower() == alias.ToLower());
             }
             catch (Exception)
             {
@@ -27,37 +28,6 @@ namespace _Parcial1_ap1__20180616.BLL
             finally
             {
                 contexto.Dispose();
-            }
-
-            return encontrado;
-        }
-
-        public static bool ExisteNombre(int id, string alias)
-        {
-            bool encontrado = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                encontrado = contexto.Ciudades.Any(e => e.CiudadNombre == alias);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-
-            if(encontrado)
-            {
-                Ciudades ciudades = Buscar(id);
-                if (ciudades == null)
-                    return true;
-                if (ciudades.CiudadNombre == alias)
-                    encontrado = false;
             }
 
             return encontrado;
@@ -109,12 +79,28 @@ namespace _Parcial1_ap1__20180616.BLL
             return paso;
         }
 
-        public static bool Guardar(Ciudades ciudades)
-        {
-            if (!Existe(ciudades.CiudadId))
-                return Insertar(ciudades);
-            else
-                return Modificar(ciudades);
+        public static bool Guardar(Ciudades ciudades, string nombre)
+        { 
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                if (ExisteNombre(nombre))
+                    return paso;
+                if (contexto.Ciudades.Add(ciudades) != null)
+                    paso = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
         }
 
         public static Ciudades Buscar(int id)
